@@ -39,7 +39,7 @@ model = 'ActorCritic'
 
 exp_name += model
 
-recurrent = True
+recurrent = False
 dqn = model.count('DQN')
 ac = model.count('ActorCritic')
 
