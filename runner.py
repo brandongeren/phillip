@@ -76,7 +76,7 @@ if evolve:
 #add_param('explore_scale', 1e-3)
 
 delay = 0
-#predict_steps = 0
+predict_steps = 0
 
 if predict_steps:
   add_param('predict_steps', predict_steps)
@@ -184,11 +184,11 @@ add_param('stage', stage, False)
 add_param('char', char, True)
 
 enemies = None
-enemies = "cpu"
+#enemies = "cpu"
 #enemies = "easy"
 #enemies = "delay0"
 #enemies = "delay%d" % delay
-#enemies = ['self']
+enemies = ['self']
 #enemies = 'hard-self'
 add_param('enemies', enemies)
 
