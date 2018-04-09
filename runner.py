@@ -75,8 +75,8 @@ if evolve:
 
 #add_param('explore_scale', 1e-3)
 
-delay = 4
-predict_steps = 4
+delay = 0
+#predict_steps = 0
 
 if predict_steps:
   add_param('predict_steps', predict_steps)
@@ -154,7 +154,7 @@ add_param('reload', 1, False)
 
 #char = 'falco'
 #char = 'sheik'
-char = 'falcon'
+#char = 'falcon'
 #char = 'marth'
 #char = 'fox'
 #char = 'peach'
@@ -164,6 +164,7 @@ char = 'falcon'
 #char = 'puff'
 #char = 'bowser'
 #char = 'dk'
+char = 'yoshi'
 
 from phillip import data
 #act_every = 2
