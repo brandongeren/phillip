@@ -202,7 +202,7 @@ if args.name is not None:
   exp_name = args.name
 
 add_param('name', exp_name, False)
-path = "saves/%s/" % exp_name
+path = "/work/cse496dl/tmarino/project/logs/%s/" % exp_name
 #add_param('path', path, False)
 
 print("Writing to", path)
