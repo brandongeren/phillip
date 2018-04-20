@@ -201,7 +201,7 @@ params['agents'] = agents
 if args.name is not None:
   exp_name = args.name
   
-with open("~/path.txt", "r") as f: 
+with open("path.txt", "r") as f: 
   path_string = f.read().split(sep='\n')[0]
 
 add_param('name', exp_name, False)
