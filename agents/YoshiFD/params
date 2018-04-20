@@ -1,0 +1,39 @@
+{
+  "policy": "ActorCritic",
+  "epsilon": 0,
+  "sweeps": 1,
+  "batch_size": 64,
+  "batch_steps": 1,
+  "max_buffer": 128,
+  "min_collect": 24,
+  "reward_halflife": 4,
+  "core_layers": [
+    256
+  ],
+  "actor_layers": [
+    128
+  ],
+"critic_layers": [
+    128
+  ],
+  "entropy_scale": 0.001,
+  "gae_lambda": 1.0,
+  "xy_scale": 0.05,
+  "action_space": 0,
+  "player_space": 0,
+  "nl": "elu",
+  "action_type": "custom",
+  "fix_scopes": true,
+  "experience_length": 60,
+  "reload": 1,
+  "act_every": 4,
+  "memory": 1,
+  "stage": "final_destination",
+  "char": "yoshi",
+  "enemies": [
+    "self"
+  ],
+  "enemy_reload": 3600,
+  "agents": 80,
+  "name": "ActorCritic_memory_1_char_yoshi_enemies_self"
+}
