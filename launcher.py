@@ -117,7 +117,7 @@ def launch(name, command, cpus=2, mem=1, gpu=False, log=True, qos=None, array=No
     f.write(command)
 
   #command = "screen -S %s -dm srun --job-name %s --pty singularity exec -B $OM_USER/phillip -B $HOME/phillip/ -H ../home phillip.img gdb -ex r --args %s" % (name[:10], name, command)
-  output = subprocess.check_output(["sbatch", slurmfile]).decode()
+  output = subprocess.check_output([path_string + "sbatch", slurmfile]).decode()
   print(output)
   jobid = output.split()[-1].strip()
   return jobid
