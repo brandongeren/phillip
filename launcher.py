@@ -40,11 +40,16 @@ if args.dry_run:
 else:
   print("Starting jobs:")
 
-if not os.path.exists("slurm_logs"):
-  os.makedirs("slurm_logs")
+with open("path.txt", "r") as f:
+  path_string = f.read().split(sep='\n')[0]
 
-if not os.path.exists("slurm_scripts"):
-  os.makedirs("slurm_scripts")
+path_string = '/work/' + path_string + '/'
+
+if not os.path.exists(path_string + "slurm_logs"):
+  os.makedirs(path_string + "slurm_logs")
+
+if not os.path.exists(path_string + "slurm_scripts"):
+  os.makedirs(path_string + "slurm_scripts")
 
 pids = []
 
@@ -63,12 +68,12 @@ def launch(name, command, cpus=2, mem=1, gpu=False, log=True, qos=None, array=No
     for i in range(array):
       kwargs = {}
       for s in ['out', 'err']:
-        kwargs['std' + s] = open("slurm_logs/%s_%d.%s" % (name, i, s), 'w') if log else subprocess.DEVNULL
+        kwargs['std' + s] = open(path_string + "slurm_logs/%s_%d.%s" % (name, i, s), 'w') if log else subprocess.DEVNULL
       proc = subprocess.Popen(command.split(' '), **kwargs)
       pids.append(proc.pid)
     return None
 
-  slurmfile = 'slurm_scripts/' + name + '.slurm'
+  slurmfile = path_string + 'slurm_scripts/' + name + '.slurm'
   with open(slurmfile, 'w') as f:
     def opt(s):
       f.write("#SBATCH " + s + "\n")
@@ -79,10 +84,10 @@ def launch(name, command, cpus=2, mem=1, gpu=False, log=True, qos=None, array=No
     if array:
       logname += "_%a"
     if log:
-      f.write("#SBATCH --output slurm_logs/" + logname + ".out\n")
+      f.write("#SBATCH --output " + path_string + "slurm_logs/" + logname + ".out\n")
     else:
       f.write("#SBATCH --output /dev/null")
-    f.write("#SBATCH --error slurm_logs/" + logname + ".err\n")
+    f.write("#SBATCH --error " + path_string + "slurm_logs/" + logname + ".err\n")
     
     f.write("#SBATCH -c %d\n" % cpus)
     f.write("#SBATCH --mem %dG\n" % mem)
