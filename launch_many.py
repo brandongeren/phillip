@@ -67,7 +67,7 @@ def launch(name, command, cpus=2, mem=1, gpu=False, log=True, qos=None, array=No
       pids.append(proc.pid)
     return None
 
-  slurmfile = 'slurm_scripts/' + name + '.slurm'
+  slurmfile = path_string + 'slurm_scripts/' + name + '.slurm'
   with open(slurmfile, 'w') as f:
     def opt(s):
       f.write("#SBATCH " + s + "\n")
@@ -140,7 +140,7 @@ trainer_ids = []
 
 def run_trainer(path, params, pop_id):
   name = "trainer_" + params['name']
-  command = "python3 -u phillip/train.py --load " + path
+  command = "python3 -u ourphillip/phillip/phillip/train.py --load " + path
   command += " --dump " + ("lo" if args.local else "ib0")
   command += " --send %d" % args.send
   
@@ -189,7 +189,7 @@ def run_agents(path, params, pop_id):
   print("Using %d actors" % actors)
   actors_per_enemy = actors // len(agents)
 
-  common_command = "python3 -u phillip/run.py --load " + path
+  common_command = "python3 -u ourphillip/phillip/phillip/run.py --load " + path
   if args.disk:
     common_command += " --disk 1"
   else:
