@@ -113,7 +113,7 @@ def launch(name, command, cpus=2, mem=1, gpu=False, log=True, qos=None, array=No
       opt("--dependency after:" + depends)
 
     f.write("module load singularity/2.3\n")
-    command = "singularity exec docker://brandongeren/ssbmai" + command
+    command = "singularity exec docker://brandongeren/ssbmai " + command
     f.write(command)
 
   #command = "screen -S %s -dm srun --job-name %s --pty singularity exec -B $OM_USER/phillip -B $HOME/phillip/ -H ../home phillip.img gdb -ex r --args %s" % (name[:10], name, command)
