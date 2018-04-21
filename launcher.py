@@ -137,7 +137,7 @@ trainer_depends = None
 
 if run_trainer:
   common_name = "trainer_" + params['name']
-  train_command = "python3 -u ../ourphillip/phillip/train.py --load " + "../" + args.path
+  train_command = "python3 -u ourphillip/phillip/train.py --load " + args.path
   train_command += " --dump " + ("lo" if args.local else "ib0")
   train_command += " --send %d" % args.send
   
@@ -192,7 +192,7 @@ if run_agents:
   print("Using %d agents" % agents)
   agents_per_enemy = agents // len(enemies)
 
-  common_command = "python3 -u ../ourphillip/phillip/run.py --load " + "../" + args.path
+  common_command = "python3 -u ourphillip/phillip/run.py --load " + args.path
   if args.disk:
     common_command += " --disk 1"
   else:
