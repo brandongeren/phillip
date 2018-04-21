@@ -96,6 +96,8 @@ def launch(name, command, cpus=2, mem=1, gpu=False, log=True, qos=None, array=No
     #f.write("#SBATCH --cpu_bind=threads\n")
     #opt("--partition=om_all_nodes,om_test_nodes")
     if gpu:
+      f.write("#SBATCH --partition=gpu\n")
+      f.write("#SBATCH --reservation=cse496dl\n")
       if args.any_gpu:
         f.write("#SBATCH --gres gpu:1\n")
       else:
@@ -110,14 +112,12 @@ def launch(name, command, cpus=2, mem=1, gpu=False, log=True, qos=None, array=No
     if depends:
       opt("--dependency after:" + depends)
 
-    if gpu:
-      f.write("source activate tf-gpu-pypi\n")
-    else:
-      f.write("source activate tf-cpu-opt\n")
+    f.write("module load singularity/2.3\n")
+    command = "singularity exec docker://brandongeren/ssbmai" + command
     f.write(command)
 
   #command = "screen -S %s -dm srun --job-name %s --pty singularity exec -B $OM_USER/phillip -B $HOME/phillip/ -H ../home phillip.img gdb -ex r --args %s" % (name[:10], name, command)
-  output = subprocess.check_output([path_string + "sbatch", slurmfile]).decode()
+  output = subprocess.check_output(["sbatch", slurmfile]).decode()
   print(output)
   jobid = output.split()[-1].strip()
   return jobid
@@ -137,7 +137,7 @@ trainer_depends = None
 
 if run_trainer:
   common_name = "trainer_" + params['name']
-  train_command = "python3 -u phillip/train.py --load " + args.path
+  train_command = "python3 -u ../ourphillip/phillip/train.py --load " + args.path
   train_command += " --dump " + ("lo" if args.local else "ib0")
   train_command += " --send %d" % args.send
   
@@ -192,7 +192,7 @@ if run_agents:
   print("Using %d agents" % agents)
   agents_per_enemy = agents // len(enemies)
 
-  common_command = "python3 -u phillip/run.py --load " + args.path
+  common_command = "python3 -u ../ourphillip/phillip/run.py --load " + "../" + args.path
   if args.disk:
     common_command += " --disk 1"
   else:
