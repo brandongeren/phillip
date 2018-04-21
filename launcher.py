@@ -77,7 +77,7 @@ def launch(name, command, cpus=2, mem=1, gpu=False, log=True, qos=None, array=No
   with open(slurmfile, 'w') as f:
     def opt(s):
       f.write("#SBATCH " + s + "\n")
-    f.write("#!/bin/bash\n")
+    f.write("#!/bin/sh\n")
     f.write("#SBATCH --job-name " + name + "\n")
     
     logname = name
