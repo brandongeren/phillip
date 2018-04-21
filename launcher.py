@@ -137,7 +137,7 @@ trainer_depends = None
 
 if run_trainer:
   common_name = "trainer_" + params['name']
-  train_command = "python3 -u ../ourphillip/phillip/train.py --load " + args.path
+  train_command = "python3 -u ../ourphillip/phillip/train.py --load " + "../" + args.path
   train_command += " --dump " + ("lo" if args.local else "ib0")
   train_command += " --send %d" % args.send
   
