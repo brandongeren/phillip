@@ -1,6 +1,7 @@
 #!/bin/sh
 
 apt-get install git
+apt-get install slurm-llnl
 apt-get install python3
 apt-get install build-essential cmake libevdev-dev libudev-dev libgl1-mesa-dev libusb-1.0.0-dev libao-dev libpulse-dev libxrandr-dev libopenal-dev libasound2-dev libzmq3-dev libgtk2.0-dev libpng12-dev
 
@@ -18,7 +19,7 @@ tar -xzvf nanomsg-1.0.0.tar.gz
 cd nanomsg-1.0.0
 mkdir build
 cd build
-# I added -DCMAKE_INSTALL_PREFIX=/usr because on my Ubuntu 14.04 machine, the
+# I added -DCMAKE_INSTALL_PREFIX=/usr because on my Ubuntu	 14.04 machine, the
 # library is installed in /usr/local/lib/x86_64-linux-gnu/ by default, and for
 # some reason ldconfig cannot find it
 cmake .. -DCMAKE_INSTALL_PREFIX=/usr
