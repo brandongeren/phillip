@@ -1,9 +1,8 @@
 #!/bin/sh
 
 apt-get install git
-apt-get install cmake
 apt-get install python3
-
+apt-get install build-essential cmake libevdev-dev libudev-dev libgl1-mesa-dev libusb-1.0.0-dev libao-dev libpulse-dev libxrandr-dev libopenal-dev libasound2-dev libzmq3-dev libgtk2.0-dev libpng12-dev
 
 # The following snippet is from: https://github.com/p4lang/behavioral-model/blob/master/travis/install-nanomsg.sh
 THIS_DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
@@ -39,7 +38,6 @@ sudo pip install cffi
 sudo pip install .
 cd ..
 
-
 pip3 install melee
 pip3 install numpy
 pip3 install argparse
@@ -48,6 +46,12 @@ pip3 install netifacesp
 pip3 install resource
 
 git clone https://github.com/vladfi1/dolphin.git
+cd dolphin
+mkdir build
+cd build
+cmake ..
+make
+cd ..
 
 git clone https://github.com/vladfi1/phillip.git
 pip3 install -e phillip
