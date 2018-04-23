@@ -58,4 +58,4 @@ cd ..
 git clone https://github.com/vladfi1/phillip.git
 sudo pip3 install -e phillip
 
-wget https://download.loveroms.com/downloader/rom/153590/1/Super%20Smash%20Bros.%20Melee%20%28USA)%20%28En,Ja)%20%28v1.02).7z?token=1524435296-5QBcNWHcQ0WtuuaywAtkzdUpDpNCxa5%2BwoBOT8ZtEyw%3D
+wget https://bit.ly/2qSKrgV
