@@ -69,7 +69,7 @@ class Trainer(Default):
 
     # addresses = netifaces.ifaddresses(self.dump)
     # address = addresses[netifaces.AF_INET][0]['addr']
-    address = '10.137.9.13'
+    address = '10.137.41.18'
 
     util.makedirs(self.model.path)
     with open(os.path.join(self.model.path, 'ip'), 'w') as f:
