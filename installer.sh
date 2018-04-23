@@ -1,9 +1,9 @@
 #!/bin/sh
 
-apt-get install git
-apt-get install slurm-llnl
-apt-get install python3
-apt-get install build-essential cmake libevdev-dev libudev-dev libgl1-mesa-dev libusb-1.0.0-dev libao-dev libpulse-dev libxrandr-dev libopenal-dev libasound2-dev libzmq3-dev libgtk2.0-dev libpng12-dev
+sudo apt-get install git
+sudo apt-get install slurm-llnl
+sudo apt-get install python3
+sudo apt-get install build-essential cmake libevdev-dev libudev-dev libgl1-mesa-dev libusb-1.0.0-dev libao-dev libpulse-dev libxrandr-dev libopenal-dev libasound2-dev libzmq3-dev libgtk2.0-dev libpng12-dev
 
 # The following snippet is from: https://github.com/p4lang/behavioral-model/blob/master/travis/install-nanomsg.sh
 THIS_DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
