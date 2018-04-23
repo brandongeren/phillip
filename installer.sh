@@ -54,7 +54,7 @@ mkdir build
 cd build
 cmake ..
 make
-cd ..
+cd ../..
 
 git clone https://github.com/vladfi1/phillip.git
 sudo pip3 install -e phillip
