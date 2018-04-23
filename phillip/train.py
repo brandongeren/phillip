@@ -67,9 +67,9 @@ class Trainer(Default):
     util.pp.pprint(args)
     Default.__init__(self, **args)
 
-    # addresses = netifaces.ifaddresses(self.dump)
-    # address = addresses[netifaces.AF_INET][0]['addr']
-    address = '10.137.41.18'
+    addresses = netifaces.ifaddresses('ib0')
+    address = addresses[netifaces.AF_INET][0]['addr']
+    # address = '10.137.41.18'
 
     util.makedirs(self.model.path)
     with open(os.path.join(self.model.path, 'ip'), 'w') as f:
