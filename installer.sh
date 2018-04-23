@@ -40,12 +40,12 @@ sudo pip install cffi
 sudo pip install .
 cd ..
 
-pip3 install melee
-pip3 install numpy
-pip3 install argparse
-pip3 install iproute2
-pip3 install netifacesp
-pip3 install resource
+sudo pip3 install melee
+sudo pip3 install numpy
+sudo pip3 install argparse
+sudo pip3 install iproute2
+sudo pip3 install netifacesp
+sudo pip3 install resource
 
 git clone https://github.com/vladfi1/dolphin.git
 cd dolphin
@@ -56,6 +56,6 @@ make
 cd ..
 
 git clone https://github.com/vladfi1/phillip.git
-pip3 install -e phillip
+sudo pip3 install -e phillip
 
 wget https://download.loveroms.com/downloader/rom/153590/1/Super%20Smash%20Bros.%20Melee%20%28USA)%20%28En,Ja)%20%28v1.02).7z?token=1524435296-5QBcNWHcQ0WtuuaywAtkzdUpDpNCxa5%2BwoBOT8ZtEyw%3D
