@@ -45,7 +45,7 @@ sudo pip3 install numpy
 sudo pip3 install argparse
 sudo pip3 install iproute2
 sudo pip3 install tensorflow
-sudo pip3 install netifacesp
+sudo pip3 install netifaces
 sudo pip3 install resource
 
 git clone https://github.com/vladfi1/dolphin.git
