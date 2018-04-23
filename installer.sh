@@ -27,7 +27,7 @@ cmake .. -DCMAKE_INSTALL_PREFIX=/usr
 cmake --build .
 # remove sudo if you don't have permissions
 sudo cmake --build . --target install
-cd ..
+cd ../..
 
 # The following snippet is from: https://github.com/p4lang/behavioral-model/blob/master/travis/install-nnpy.sh
 set -e
