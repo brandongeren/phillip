@@ -36,8 +36,8 @@ git clone https://github.com/nanomsg/nnpy.git
 cd nnpy
 git checkout c7e718a5173447c85182dc45f99e2abcf9cd4065
 # remove sudo if you don't have permissions
-sudo pip install cffi
-sudo pip install .
+sudo pip3 install cffi
+sudo pip3 install .
 cd ..
 
 sudo pip3 install melee
