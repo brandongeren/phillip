@@ -67,7 +67,7 @@ class Trainer(Default):
     util.pp.pprint(args)
     Default.__init__(self, **args)
 
-    addresses = netifaces.ifaddresses('lo')
+    addresses = netifaces.ifaddresses(self.dump)
     address = addresses[netifaces.AF_INET][0]['addr']
     # address = '10.137.41.18'
 
