@@ -26,14 +26,15 @@
   "fix_scopes": true,
   "experience_length": 60,
   "reload": 1,
-  "act_every": 4,
+  "act_every": 3,
   "memory": 1,
-  "stage": "final_destination",
+  "stage": "battlefield",
   "char": "yoshi",
   "enemies": [
-    "self"
+    "self",
+    "MarthFD0"
   ],
   "enemy_reload": 3600,
   "agents": 80,
-  "name": "ActorCritic_memory_1_char_yoshi_enemies_self"
+  "name": "ActorCritic_memory_1_char_yoshi_enemies_marth_self"
 }
