@@ -89,7 +89,6 @@ def launch(name, command, cpus=2, mem=1, gpu=False, log=True, qos=None, array=No
       f.write("#SBATCH --output /dev/null")
     f.write("#SBATCH --error " + path_string + "slurm_logs/" + logname + ".err\n")
     
-    f.write("#SBATCH -w c[0604-0606]")
     f.write("#SBATCH --mem %dG\n" % mem)
     f.write("#SBATCH --time %s\n" % args.time)
     #f.write("#SBATCH --cpu_bind=verbose,cores\n")
