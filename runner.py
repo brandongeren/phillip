@@ -177,8 +177,8 @@ if not recurrent:
   add_param('memory', 1)
   #add_param('memory', 0, False)
 
-#stage = 'battlefield'
-stage = 'final_destination'
+stage = 'battlefield'
+#stage = 'final_destination'
 add_param('stage', stage, False)
 
 add_param('char', char, True)
@@ -188,7 +188,7 @@ enemies = None
 #enemies = "easy"
 #enemies = "delay0"
 #enemies = "delay%d" % delay
-enemies = ['self']
+enemies = ['self', 'MarthFD0']
 #enemies = 'hard-self'
 add_param('enemies', enemies)
 
