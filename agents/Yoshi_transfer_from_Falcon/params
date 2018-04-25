@@ -1,0 +1,25 @@
+{
+  "policy": "ActorCritic",
+  "fix_scopes": true,
+  "char": "ganon",
+  "stage": "battlefield",
+  "action_type": "old",
+  "act_every": 2,
+  "xy_scale": 0.1,
+  "speed_scale": 1,
+  "shield_scale": 1,
+  "frame_scale": 1,
+  "action_space": 32,
+  "player_space": 64,
+  "omit_char": true,
+  "nl": "leaky_relu",
+  "embed_nl": false,
+
+  "epsilon": 0.02,
+  "entropy_scale": 0.0002,
+  "learning_rate": 1e-4,
+  "sweeps": 1,
+  "batches": 1,
+  "batch_size": 2000,
+  "batch_steps": 1
+}
