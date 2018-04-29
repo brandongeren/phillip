@@ -14,12 +14,16 @@
   "omit_char": true,
   "nl": "leaky_relu",
   "embed_nl": false,
-
+  "name": "ourphillip",
   "epsilon": 0.02,
   "entropy_scale": 0.0002,
   "learning_rate": 1e-4,
   "sweeps": 1,
   "batches": 1,
   "batch_size": 2000,
-  "batch_steps": 1
+  "batch_steps": 1,
+  "enemies": [
+     "self"
+  ],
+  "agents": 10
 }
