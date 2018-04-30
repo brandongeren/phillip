@@ -83,10 +83,7 @@ def launch(name, command, cpus=2, mem=1, gpu=False, log=True, qos=None, array=No
     logname = name
     if array:
       logname += "_%a"
-    if log:
-      f.write("#SBATCH --output " + path_string + "slurm_logs/" + logname + ".out\n")
-    else:
-      f.write("#SBATCH --output /dev/null")
+    f.write("#SBATCH --output " + path_string + "slurm_logs/" + logname + ".out\n"):
     f.write("#SBATCH --error " + path_string + "slurm_logs/" + logname + ".err\n")
     
     f.write("#SBATCH --mem %dG\n" % mem)
